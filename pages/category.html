@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Категории</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon5.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon5.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="../img/favicon5.png">
+        <link rel="stylesheet" href="../css/category.css">
+	      <script src="../js/storage.js" defer></script>
+        <script src="../js/product.js" defer></script>
+        <script src="../js/main.js" defer></script>
+        <script src="../js/category.js" defer></script>
+</head>
+<body>
+        <header>
+        <div class="top-bar" id="top-bar">
+		<div class="top-bar-left">
+			<div class="top-item dropdown">
+  			<a class="trigger" href="#">Обо мне ▾</a>
+  				<div class="menu">
+					 <a href="#" class="top-hover">Телеграмм</a>
+   					 <a href="#" class="top-hover">Инстаграм</a>
+    					<a href="#" class="top-hover">Гит</a>
+ 				 </div>
+			</div>
+				<a href="https://hexly.kz/" target="_blank">Колледж</a>
+				<a href="#">Помощь</a>
+                                <a href="../index.html">Главная</a>
+		</div>	
+		<div class="top-bar-right">
+			<a href="../pages/favoirite.html" class="icon-btn">
+  				<img src="../img/heart.png" alt="Лайки" class="icon normal">
+  				<img src="../img/heart-hover.png" alt="Лайки" class="icon hover">
+			</a>
+
+			<a href="../pages/corzina.html" class="icon-btn">
+				<img src="../img/cart.png" alt="Корзина" class="icon normal">
+				<img src="../img/cart-hover.png" alt="Корзина" class="icon hover">
+			</a>
+				<a href="../pages/registr.html" class="top-hover"> <span style="color: rgb(118, 118, 118);">&#128274;</span> Вход и регистрация</a>
+				<a href="../pages/create-product.html" class="top-hover">+ Разместить обьявление</a>
+		</div>	
+	</div>
+
+        
+  <div class="main-bar" id="main-bar">
+
+  <a href="../index.html" class="logo-img">
+    <img src="../img/adify-logo.png" alt="Adify">
+  </a>
+    <button id="catBtn" class="cat-btn" type="button">Все категории</button>
+
+    <div class="input-btn">
+      <img src="../img/search.png" alt="search">
+      <input type="text" id="searchInput" placeholder="Поиск по объявлениям">
+      <button id="searchBtn" type="button">Найти</button>
+    </div>
+  </div>
+</header>
+
+<div id="overlay" class="overlay"></div>
+
+<div id="mega" class="mega">
+  <div class="mega-left" id="catList">
+    	<button class="cat-item active" data-cat="transport" type="button">Авто</button>
+	<button class="cat-item" data-cat="electronics" type="button">Электроника</button>
+	<button class="cat-item" data-cat="home" type="button">Дом и сад</button>
+	<button class="cat-item" data-cat="animals" type="button">Животные</button>
+	<button class="cat-item" data-cat="kids" type="button">Детский мир</button>
+	<button class="cat-item" data-cat="fashion" type="button">Мода и стиль</button>
+	<button class="cat-item" data-cat="jobs" type="button">Работа</button>
+	<button class="cat-item" data-cat="hobby" type="button">Хобби и спорт</button>
+	<button class="cat-item" data-cat="repair" type="button">Ремонт</button>	
+  </div>
+
+  <div class="mega-right" id="subcats"></div>
+</div>
+
+
+
+<main class="category-page">
+  <div class="category-page__container">
+
+    <section class="category-top">
+      <h1 id="categoryTitle">Категория</h1>
+      <p id="categorySubtitle">Объявления по выбранному разделу</p>
+    </section>
+
+    <section class="filters">
+      <h2 class="filters__title">Фильтры</h2>
+
+        <div class="filter-group">
+         <label for="cityFilter">Город</label>
+                <select id="cityFilter">
+                        <option value="">Любой</option>
+                        <option value="Алматы">Алматы</option>
+                        <option value="Астана">Астана</option>
+                        <option value="Шымкент">Шымкент</option>
+                        <option value="Караганда">Караганда</option>
+                </select>
+        </div>
+
+      <div class="filters__grid">
+        <div class="filter-group">
+          <label for="searchFilter">Поиск</label>
+          <input type="text" id="searchFilter" placeholder="Что ищете?">
+        </div>
+
+        <div class="filter-group">
+          <label for="conditionFilter">Состояние</label>
+          <select id="conditionFilter">
+            <option value="">Любое</option>
+            <option value="Новый">Новый</option>
+            <option value="Б/у">Б/у</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="minPrice">Цена от</label>
+          <input type="number" id="minPrice" placeholder="От">
+        </div>
+
+        <div class="filter-group">
+          <label for="maxPrice">Цена до</label>
+          <input type="number" id="maxPrice" placeholder="До">
+        </div>
+      </div>
+
+      <div id="dynamicFilters" class="filters__dynamic"></div>
+    </section>
+
+    <section class="category-products">
+      <div id="productsList" class="products-grid"></div>
+    </section>
+    </div>
+</main>
+
+        <footer>
+  	<hr>
+
+		<div class="footer-row">
+			<ul class="left-foot">
+				<li><a href="">Помощь и обратная связь</a></li>
+				<li><a href="./pages/busines.html">Бизнес на Adify</a></li>
+				<li><a href="">Блог Adify</a></li>
+				<li><a href="..pages/policy.html">Условия использования</a></li>
+				<li><a href="../pages/policy.html">Политика конфиденциальности</a></li>
+			</ul>
+
+			<ul class="right-foot">
+				<li><a href="">Правила безопасности</a></li>
+				<li><a href="">Карта сайта</a></li>
+				<li><a href="">Карта регионов</a></li>
+				<li><a href="">Работа в Adify</a></li>
+			</ul>
+
+		<img src="../img/adify-logo.png" alt="logo" class="footer-logo">
+		</div>
+</footer>
+
+
+</body>
+</html>

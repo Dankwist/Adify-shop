@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создать объявление</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon5.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon5.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="../img/favicon5.png">
+  <link rel="stylesheet" href="../css/create-product.css">
+  <script src="../js/storage.js" defer></script>
+  <script src="../js/product.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/create-product.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="top-bar" id="top-bar">
+      <div class="top-bar-left">
+        <div class="top-item dropdown">
+          <a class="trigger" href="#">Обо мне ▾</a>
+          <div class="menu">
+            <a href="#" class="top-hover">Телеграмм</a>
+            <a href="#" class="top-hover">Инстаграм</a>
+            <a href="#" class="top-hover">Гит</a>
+          </div>
+        </div>
+
+        <a href="https://hexly.kz/" target="_blank">Колледж</a>
+        <a href="#">Помощь</a>
+        <a href="../index.html">Главная</a>
+      </div>
+
+      <div class="top-bar-right">
+        <a href="../pages/favoirite.html" class="icon-btn">
+          <img src="../img/heart.png" alt="Лайки" class="icon normal">
+          <img src="../img/heart-hover.png" alt="Лайки" class="icon hover">
+        </a>
+
+        <a href="../pages/corzina.html" class="icon-btn">
+          <img src="../img/cart.png" alt="Корзина" class="icon normal">
+          <img src="../img/cart-hover.png" alt="Корзина" class="icon hover">
+        </a>
+
+        <a href="../pages/registr.html" class="top-hover">
+          <span style="color: rgb(118, 118, 118);">&#128274;</span> Вход и регистрация
+        </a>
+
+        <a href="../pages/create-product.html" class="top-hover">+ Разместить обьявление</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="create-page">
+    <h1 class="page-title">Создать объявление</h1>
+
+    <section class="form-box">
+      <h2 class="section-title">Опишите в подробностях</h2>
+
+      <div class="form-group">
+        <label for="productTitle">Укажите название *</label>
+        <input
+          type="text"
+          id="productTitle"
+          maxlength="70"
+          placeholder="Например, iPhone 11 с гарантией"
+        >
+        <div class="helper-row">
+          <span id="titleError" class="error-text"></span>
+          <span id="titleCounter" class="counter">0/70</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="categorySelectBtn">Категория *</label>
+        <button type="button" id="categorySelectBtn" class="select-btn">
+          Выберите категорию
+        </button>
+        <input type="hidden" id="selectedCategory">
+      </div>
+    </section>
+
+    <section class="form-box">
+      <h2 class="section-title">Фото</h2>
+      <p class="section-note">Можно загрузить до 8 фотографий.</p>
+
+      <input type="file" id="photoInput" accept="image/*" multiple hidden>
+
+      <div class="photo-grid" id="photoGrid">
+        <div class="photo-box photo-box--main" id="addPhotoBtn">Добавить фото</div>
+        <div class="photo-box">📷</div>
+        <div class="photo-box">📷</div>
+        <div class="photo-box">📷</div>
+        <div class="photo-box">📷</div>
+        <div class="photo-box">📷</div>
+        <div class="photo-box">📷</div>
+        <div class="photo-box">📷</div>
+      </div>
+    </section>
+
+    <section class="form-box">
+      <div class="form-group">
+        <label for="productDescription">Описание *</label>
+        <textarea
+          id="productDescription"
+          maxlength="9000"
+          placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание"
+        ></textarea>
+        <div class="helper-row">
+          <span id="descError" class="error-text"></span>
+          <span id="descCounter" class="counter">0/9000</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-box">
+      <div class="form-group">
+        <label for="productCity">Местоположение *</label>
+        <input type="text" id="productCity" placeholder="Например, Алматы">
+      </div>
+    </section>
+
+    <section class="form-box">
+      <h2 class="section-title">Контактная информация</h2>
+
+      <div class="form-group">
+        <label for="contactName">Контактное лицо *</label>
+        <input type="text" id="contactName" placeholder="Ваше имя">
+      </div>
+
+      <div class="form-group">
+        <label for="contactEmail">Email-адрес</label>
+        <input type="email" id="contactEmail" placeholder="example@gmail.com">
+      </div>
+
+      <div class="form-group">
+        <label for="contactPhone">Номер телефона *</label>
+        <input type="text" id="contactPhone" placeholder="+7 777 000 00 00">
+      </div>
+
+      <div class="form-group">
+        <label for="productCondition">Состояние</label>
+        <select id="productCondition">
+          <option value="Новый">Новый</option>
+          <option value="Б/у">Б/у</option>
+          <option value="Как новый">Как новый</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="productPrice">Цена *</label>
+        <input type="number" id="productPrice" placeholder="Введите цену">
+      </div>
+    </section>
+
+    <section class="form-box actions-box">
+      <button type="button" id="publishBtn" class="publish-btn">Опубликовать</button>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <div class="footer-row">
+      <ul class="left-foot">
+        <li><a href="">Помощь и обратная связь</a></li>
+        <li><a href="./pages/busines.html">Бизнес на Adify</a></li>
+        <li><a href="">Блог Adify</a></li>
+        <li><a href="../pages/policy.html">Условия использования</a></li>
+        <li><a href="../pages/policy.html">Политика конфиденциальности</a></li>
+      </ul>
+
+      <ul class="right-foot">
+        <li><a href="">Правила безопасности</a></li>
+        <li><a href="">Карта сайта</a></li>
+        <li><a href="">Карта регионов</a></li>
+        <li><a href="">Работа в Adify</a></li>
+      </ul>
+
+      <img src="../img/adify-logo.png" alt="logo" class="footer-logo">
+    </div>
+  </footer>
+
+  <div class="modal" id="categoryModal">
+    <div class="modal-content">
+      <button type="button" class="close-btn" id="closeCategoryModal">✕</button>
+
+      <h2 class="modal-title">Выберите категорию</h2>
+
+      <div class="search-row">
+        <input type="text" id="categorySearch" placeholder="Поиск">
+      </div>
+
+      <div class="category-grid" id="categoryGrid">
+        <button type="button" class="category-item" data-category="transport">
+          <span class="category-icon">
+            <img src="../img-category/transport-category.png" alt="Авто">
+          </span>
+          <span class="category-title">Транспорт</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="jobs">
+          <span class="category-icon">
+            <img src="../img-category/work-category.png" alt="Работа">
+          </span>
+          <span class="category-title">Работа</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="repair">
+          <span class="category-icon">
+            <img src="../img-category/building-category.png" alt="Ремонт">
+          </span>
+          <span class="category-title">Строительство и ремонт</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="electronics">
+          <span class="category-icon">
+            <img src="../img-category/elektronika-category.png" alt="Электроника">
+          </span>
+          <span class="category-title">Электроника</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="home">
+          <span class="category-icon">
+            <img src="../img-category/home-category.png" alt="Дом и сад">
+          </span>
+          <span class="category-title">Дом и сад</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="fashion">
+          <span class="category-icon">
+            <img src="../img-category/clothes-category.png" alt="Мода и стиль">
+          </span>
+          <span class="category-title">Мода и стиль</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="kids">
+          <span class="category-icon">
+            <img src="../img-category/kids-category.png" alt="Детский мир">
+          </span>
+          <span class="category-title">Детский мир</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="hobby">
+          <span class="category-icon">
+            <img src="../img-category/sport-category.png" alt="Хобби и спорт">
+          </span>
+          <span class="category-title">Хобби и спорт</span>
+        </button>
+
+        <button type="button" class="category-item" data-category="animals">
+          <span class="category-icon">
+            <img src="../img-category/animal-category.png" alt="Животные">
+          </span>
+          <span class="category-title">Животные</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

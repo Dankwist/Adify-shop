@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Избранное</title>
+          <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon5.png">
+         <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon5.png">
+         <link rel="icon" type="image/png" sizes="48x48" href="../img/favicon5.png">
+        <link rel="stylesheet" href="../css/favoirite.css">
+        <script src="../js/storage.js" defer></script>
+        <script src="../js/product.js" defer></script>
+        <script src="../js/favoirite.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="top-bar" id="top-bar">
+      <div class="top-bar-left">
+        <div class="top-item dropdown">
+          <a class="trigger" href="#">Обо мне ▾</a>
+          <div class="menu">
+            <a href="#" class="top-hover">Телеграмм</a>
+            <a href="#" class="top-hover">Инстаграм</a>
+            <a href="#" class="top-hover">Гит</a>
+          </div>
+        </div>
+        <a href="https://hexly.kz/" target="_blank">Колледж</a>
+        <a href="#">Помощь</a>
+        <a href="../index.html">Главная</a>
+      </div>
+
+      <div class="top-bar-right">
+        <a href="../pages/favoirite.html" class="icon-btn">
+          <img src="../img/heart.png" alt="Лайки" class="icon normal">
+          <img src="../img/heart-hover.png" alt="Лайки" class="icon hover">
+        </a>
+
+        <a href="../pages/corzina.html" class="icon-btn">
+          <img src="../img/cart.png" alt="Корзина" class="icon normal">
+          <img src="../img/cart-hover.png" alt="Корзина" class="icon hover">
+        </a>
+
+        <div id="authArea">
+          <a href="../pages/registr.html" class="top-hover">
+            <span style="color: rgb(118, 118, 118);">&#128274;</span>
+            Вход и регистрация
+          </a>
+        </div>
+
+        <a href="../pages/create-product.html" class="top-hover">+ Разместить объявление</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <section class="favorite">
+    <div class="up-sect">
+      <h2>Избранные объявления</h2>
+      <button class="btn-clear" id="clearFavoritesBtn" type="button">Очистить избранное</button>
+    </div>
+
+    <div class="favorite-empty" id="favoriteEmpty">
+      <p>Пока в избранном ничего нет</p>
+    </div>
+
+    <div class="favorite-card" id="js-favorite-card-id"></div>
+  </section>
+
+
+
+
+  <footer>
+    <hr>
+    <div class="footer-row">
+      <ul class="left-foot">
+        <li><a href="">Помощь и обратная связь</a></li>
+        <li><a href="./pages/busines.html">Бизнес на Adify</a></li>
+        <li><a href="">Блог Adify</a></li>
+        <li><a href="../pages/policy.html">Условия использования</a></li>
+        <li><a href="../pages/policy.html">Политика конфиденциальности</a></li>
+      </ul>
+
+      <ul class="right-foot">
+        <li><a href="">Правила безопасности</a></li>
+        <li><a href="">Карта сайта</a></li>
+        <li><a href="">Карта регионов</a></li>
+        <li><a href="">Работа в Adify</a></li>
+      </ul>
+
+      <img src="../img/adify-logo.png" alt="logo" class="footer-logo">
+    </div>
+  </footer>
+</body>
+</html>

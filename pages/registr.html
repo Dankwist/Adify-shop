@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Регистрация</title>
+         <link rel="stylesheet" href="../css/registr.css">
+         	<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon5.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon5.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../img/favicon5.png">
+	<script src="../js/storage.js" defer></script>
+	<script src="../js/registr.js" defer></script>
+</head>
+<body>
+       <section id="authPage" class="auth-page">
+
+    <video id="bgVideo" autoplay muted loop playsinline class="bg-video">
+        <source src="../img/background.mp4" type="video/mp4">
+    </video>
+
+    <div id="authCard" class="auth-card">
+
+        <input type="radio" name="authTab" id="loginTab" checked hidden>
+        <input type="radio" name="authTab" id="signupTab" hidden>
+
+        <div id="authTabs" class="auth-tabs">
+            <label for="loginTab" id="loginTabBtn" class="tab">Войти</label>
+            <label for="signupTab" id="signupTabBtn" class="tab">Регистрация</label>
+        </div>
+
+        <form id="loginForm" class="auth-form login" novalidate>
+
+            <h2 id="loginTitle">Вход</h2>
+            <input id="loginEmail"  type="text"    placeholder="Введите email" >
+            <input  id="loginPassword" type="password"   placeholder="Введите пароль" >
+            <button id="loginSubmit" type="submit">
+                Войти
+            </button>
+
+        </form>
+
+        <form id="signupForm" class="auth-form signup" novalidate>
+
+            <h2 id="signupTitle">Регистрация</h2>
+            <input id="signupName"type="text"  placeholder="Введите имя"   >
+            <input  id="signupEmail" type="text" placeholder="Введите email" >
+            <input id="signupPassword" type="password" placeholder="Введите пароль"  >
+            <button id="signupSubmit" type="submit">
+                Зарегистрироваться
+            </button>
+
+        </form>
+
+        <p class="eror" id="eror"></p>
+    </div>
+
+</section>
+</body>
+</html>
